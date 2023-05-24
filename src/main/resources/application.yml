@@ -1,3 +1,8 @@
+polar:
+  # When deploying the system with Docker Compose or Kubernetes,
+  #  you can override the property value via an environment variable
+  catalog-service-uri: "http://localhost:9001"
+
 server:
   port: 9002
   shutdown: graceful
