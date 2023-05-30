@@ -63,7 +63,8 @@ public class BookClientTests {
         Mono<Book> book = bookClient.getBookByIsbn(bookIsbn);
 
         // The StepVerifier object lets you process reactive streams and write assertions in steps through a fluent API.
-        StepVerifier.create(book)
+        StepVerifier
+                .create(book)
                 .expectNextMatches(b -> b.isbn().equals(bookIsbn))
                 .verifyComplete();
     }
