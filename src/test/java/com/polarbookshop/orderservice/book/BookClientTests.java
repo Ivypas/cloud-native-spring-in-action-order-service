@@ -44,7 +44,7 @@ public class BookClientTests {
 
     @Test
     void whenBookExistsThenReturnBook() {
-        var bookIsbn = "123567890";
+        var bookIsbn = "1234567890";
 
         var mockResponse = new MockResponse()
                 .addHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)

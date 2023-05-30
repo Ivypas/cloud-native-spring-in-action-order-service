@@ -39,6 +39,15 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
+    /**
+     * bookClient 查不到 isbn 会返回 Mono.empty()
+     * <p>
+     * 收到 Mono.empty() 会 buidRejectedOrder(isbn, quantity)
+     *
+     * @param isbn
+     * @param quantity
+     * @return
+     */
     public Mono<Order> submitOrder(String isbn, int quantity) {
         return bookClient.getBookByIsbn(isbn)
                 .map(book -> buildAcceptedOrder(book, quantity))
